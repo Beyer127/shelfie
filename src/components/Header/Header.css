@@ -1,0 +1,15 @@
+.header{
+    background-color: rgb(149, 48, 48);
+    width: 100vw;
+    height: 7vh;
+    color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+h3{
+    padding: 5px;
+    margin-left: 85px;
+}
+

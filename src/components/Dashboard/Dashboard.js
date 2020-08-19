@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-import ProductFiles from '../ProductFiles/ProductFiles'
 import axios from 'axios'
-import Form from '../Form/Form'
+import Item from '../Item/Item'
 
 class Dashboard extends Component{
     constructor(){
@@ -13,22 +11,28 @@ class Dashboard extends Component{
         }
         }
     componentDidMount(){
-        axios.get('/api/shelfies').then(shelfies => {
+        axios.get('/api/shelfie').then(shelfies => {
             this.setState({
                 shelfies: shelfies.data
             })
         })
     }
 
+    deleteShelfie = (id) => {
+        axios.delete(`/api/shelfie/${id}`).then((shelfies) => {
+            this.setState({shelfies: shelfies.data})
+        })
+    }
+
     render(){
         console.log(this.state.shelfies)
-        const newShelfie = this.state.shelfie.map((e, i) => {
-            <Dashboard key={i} data={e} />
+        const newShelfie = this.state.shelfies.map((e, i) => {
+            return <Item deleteShelfie={this.deleteShelfie} key={i} data={e} />
         })
         return(
             <div className="dashboard">
                 {newShelfie}
-                {/* <ProductFiles/> */}
+                
             </div>
         )
     }

@@ -1,0 +1,10 @@
+form{
+    background-color: rgb(35, 235, 35);
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 35vh;
+    float: right;
+    margin: 25px;
+}
+

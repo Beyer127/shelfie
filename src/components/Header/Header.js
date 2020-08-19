@@ -1,23 +1,22 @@
-// const { Component } = require("react")
-
-import React, {Component} from 'react'
+import React, { Component } from "react";
+import "./Header.css";
 
 class Header extends Component {
-    constructor(){
-        super();
+  constructor() {
+    super();
 
-        this.state = {
+    this.state = {};
+  }
 
-        }
-    }
-
-    render(){
-        return(
-            <div>
-                Header
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <div className='header'>
+           <h3>SHELFIE</h3> 
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Header
+export default Header;
